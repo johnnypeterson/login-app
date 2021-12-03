@@ -16,7 +16,7 @@ struct ContentView: View {
       NavigationView {
         switch authViewModel.state {
         case .signedIn:
-            UserProfileView(user: authViewModel.user)
+            UserProfileView()
             .navigationTitle(
               NSLocalizedString(
                 "User Profile",

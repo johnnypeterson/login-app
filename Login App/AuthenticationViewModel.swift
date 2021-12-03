@@ -13,6 +13,7 @@ final class AuthenticationViewModel: ObservableObject {
     /// The user's log in status.
     /// - note: This will publish updates when its value changes.
     @Published var state: State
+    // In a live app I would store this in coreData or some other persitence data storage like Realm.
     var user: User?
     private var subscriptions = Set<AnyCancellable>()
 
@@ -28,6 +29,7 @@ final class AuthenticationViewModel: ObservableObject {
     
     /// Signs the user in.
     func signIn(username: String, password: String) {
+        //TODO: Add logic for loading spinner while call is made to prevent multiple button presses.
         LoginManager.login(username: username, password: password)
             .sink { (completion) in
                 switch completion {
