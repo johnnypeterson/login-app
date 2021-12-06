@@ -31,6 +31,7 @@ struct LoginView: View {
             HStack {
             SecureField("Password", text: self.$password,
                         onCommit: {
+                //Could put field validation for password requirments here
                             self.onEditingChanged(false)
                         }
             ).padding()
