@@ -16,4 +16,6 @@ public struct User: Decodable {
         case displayName = "display_name"
         case token
     }
+    
+    //User could be added to persitence data storage like Core Data we could also store token in keychain if we want to keep it encrypted.
 }

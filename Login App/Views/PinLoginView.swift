@@ -10,9 +10,8 @@ import SwiftUI
 
 struct PinLoginView: View {
     @EnvironmentObject var authViewModel: AuthenticationViewModel
-    
- 
-    
+    //TODO: Get creds from keychain to reauthenticate user.
+
     var body: some View {
         VStack {
             if authViewModel.isUnlocked {

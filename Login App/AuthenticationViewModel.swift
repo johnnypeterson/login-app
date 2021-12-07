@@ -44,6 +44,7 @@ final class AuthenticationViewModel: ObservableObject {
             } receiveValue: { (result) in
                 self.user = result
                 print(result)
+                //TODO: store credentials in KeyChain to use with pin access or FaceId
                 self.state = .signedIn(result)
             }.store(in: &subscriptions)
     }

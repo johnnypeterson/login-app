@@ -17,6 +17,7 @@ public enum RouterError: Error {
         return (error as? Self) ?? .other(error)
     }
     
+    
     public var stringValue: String {
         switch self {
         case .emptyData:

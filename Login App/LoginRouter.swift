@@ -6,8 +6,8 @@
 //
 
 import Foundation
-
 import Alamofire
+//Created using Alamofire but since this is modular it is easy to switch out for something else.
 
 public enum LoginRouter: Routable {
     case login(username: String, password: String)
