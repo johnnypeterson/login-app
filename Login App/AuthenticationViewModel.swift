@@ -7,12 +7,14 @@
 
 import SwiftUI
 import Combine
+import LocalAuthentication
 
 /// A class conforming to `ObservableObject` used to represent a user's authentication status.
 final class AuthenticationViewModel: ObservableObject {
     /// The user's log in status.
     /// - note: This will publish updates when its value changes.
     @Published var state: State
+    @Published var isUnlocked = false
     // In a live app I would store this in coreData or some other persitence data storage like Realm.
     var user: User?
     private var subscriptions = Set<AnyCancellable>()
@@ -52,6 +54,29 @@ final class AuthenticationViewModel: ObservableObject {
         self.state = .signedOut
         
     }
+    func authenticateFaceId() {
+        let context = LAContext()
+        var error: NSError?
+
+        // check whether biometric authentication is possible
+        if context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            
+            let reason = "We need to authenticate you."
+
+            context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
+                
+                DispatchQueue.main.async {
+                    if success {
+                        self.isUnlocked = true
+                    } else {
+                        
+                    }
+                }
+            }
+        } else {
+            // no biometrics handle error
+        }
+    }
     
 }
 
@@ -62,5 +87,12 @@ extension AuthenticationViewModel {
         case signedIn(User)
         /// The user is logged out.
         case signedOut
+    }
+    
+    enum PinIDState {
+        case usePin
+        case useBioMetric
+        case usePassword
+        
     }
 }

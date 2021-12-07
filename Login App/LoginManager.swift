@@ -7,7 +7,7 @@
 
 import Foundation
 import Combine
-import Alamofire
+
 
 public struct LoginManager {
     public static func login(username: String, password: String) -> AnyPublisher<User, RouterError> {

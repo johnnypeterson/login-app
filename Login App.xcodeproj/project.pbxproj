@@ -23,6 +23,7 @@
 		7554FAF4275A6D590075D2E6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7554FAF3275A6D590075D2E6 /* LoginView.swift */; };
 		7554FAF6275A6E3D0075D2E6 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7554FAF5275A6E3D0075D2E6 /* UserProfileView.swift */; };
 		7554FAF8275A6E5D0075D2E6 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7554FAF7275A6E5D0075D2E6 /* AuthenticationViewModel.swift */; };
+		7554FAFA275FAC820075D2E6 /* PinLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7554FAF9275FAC820075D2E6 /* PinLoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		7554FAF3275A6D590075D2E6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		7554FAF5275A6E3D0075D2E6 /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
 		7554FAF7275A6E5D0075D2E6 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		7554FAF9275FAC820075D2E6 /* PinLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinLoginView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,17 +114,15 @@
 		7554FABB275950E90075D2E6 /* Login App */ = {
 			isa = PBXGroup;
 			children = (
+				7554FAFB275FAD8D0075D2E6 /* Views */,
 				7554FABC275950E90075D2E6 /* Login_AppApp.swift */,
 				7554FAF1275A39420075D2E6 /* LoginManager.swift */,
-				7554FABE275950E90075D2E6 /* ContentView.swift */,
 				7554FAEF275A38610075D2E6 /* RouterError.swift */,
 				7554FAC0275950ED0075D2E6 /* Assets.xcassets */,
 				7554FAC2275950ED0075D2E6 /* Preview Content */,
 				7554FAE6275970170075D2E6 /* User.swift */,
 				7554FAE8275970840075D2E6 /* LoginRouter.swift */,
 				7554FAED275A38220075D2E6 /* Routable.swift */,
-				7554FAF3275A6D590075D2E6 /* LoginView.swift */,
-				7554FAF5275A6E3D0075D2E6 /* UserProfileView.swift */,
 				7554FAF7275A6E5D0075D2E6 /* AuthenticationViewModel.swift */,
 			);
 			path = "Login App";
@@ -151,6 +151,17 @@
 				7554FAD9275950ED0075D2E6 /* Login_AppUITestsLaunchTests.swift */,
 			);
 			path = "Login AppUITests";
+			sourceTree = "<group>";
+		};
+		7554FAFB275FAD8D0075D2E6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7554FAF9275FAC820075D2E6 /* PinLoginView.swift */,
+				7554FABE275950E90075D2E6 /* ContentView.swift */,
+				7554FAF3275A6D590075D2E6 /* LoginView.swift */,
+				7554FAF5275A6E3D0075D2E6 /* UserProfileView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +302,7 @@
 			files = (
 				7554FABF275950E90075D2E6 /* ContentView.swift in Sources */,
 				7554FAF6275A6E3D0075D2E6 /* UserProfileView.swift in Sources */,
+				7554FAFA275FAC820075D2E6 /* PinLoginView.swift in Sources */,
 				7554FABD275950E90075D2E6 /* Login_AppApp.swift in Sources */,
 				7554FAF2275A39420075D2E6 /* LoginManager.swift in Sources */,
 				7554FAE9275970840075D2E6 /* LoginRouter.swift in Sources */,
@@ -461,6 +473,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Login App/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need access to your data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -489,6 +502,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Login App/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "We need access to your data";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
